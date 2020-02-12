@@ -1,3 +1,14 @@
+## 关于我们
+
+* 邮件交流：sia.list@creditease.cn
+
+* 提交issue:
+
+* 微信交流：
+
+    <img src="docs/static_files/newlog.jpeg" width="30%" height="30%">
+    
+
 # SIA-GATEWAY| [English](README-en.md) [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 [使用指南](docs/user_guide.md) </br>
@@ -162,11 +173,11 @@
 
 * 健康检查
 
-&emsp;&emsp;在容器环境下，SIA-GateWay会暴露一个HTTP健康检查接口，通过Kubernetes 的健康检查机制，定期检查HTTP访问是否可用， 如果不可用，利用Kubernetes 的服务编排能力可以做容器的切换；在Zstack环境下， 通过后台启动一个Crontab作为守护进程检查进程的状态，保证网关的稳定可用和进程重启机制。
+&emsp;&emsp;在容器环境下，SIA-GateWay会暴露一个HTTP健康检查接口，通过Kubernetes 的健康检查机制，定期检查HTTP访问是否可用， 如果不可用，利用Kubernetes 的服务编排能力可以做容器的切换；在虚拟机/物理机环境下， 通过后台启动一个Crontab作为守护进程检查进程的状态，保证网关的稳定可用和进程重启机制。
 
 * 备份机制
 
-&emsp;&emsp;SIA-GateWay提供了一种备份网关机制，在Zstack上会启动一个备份网关API-GATEWAY-CORE，所有在容器环境（Kubernetes ）中启动的网关节点，都会将自己的路由信息同步到备份网关中，另外， 利用Nginx的高可用性和健康检查机制， 当Kubernetes 集群出现问题时所有容器流量无法响应时， 会将Nginx上的流量自动切换到API-GATEWAY-CORE备份节点。API-GATEWAY-CORE在工作时也会触发预警，提示目前有不可用的K8s网关节点。
+&emsp;&emsp;SIA-GateWay提供了一种备份网关机制，在虚拟机/物理机上会启动一个备份网关API-GATEWAY-CORE，所有在容器环境（Kubernetes ）中启动的网关节点，都会将自己的路由信息同步到备份网关中，另外， 利用Nginx的高可用性和健康检查机制， 当Kubernetes 集群出现问题时所有容器流量无法响应时， 会将Nginx上的流量自动切换到API-GATEWAY-CORE备份节点。API-GATEWAY-CORE在工作时也会触发预警，提示目前有不可用的K8s网关节点。
 
 
 
@@ -255,13 +266,5 @@ SIA-GateWay将架构的可扩展性作为重要的对外输出能力，第三方
 
 + [Rabbitmq队列服务PLUS](https://github.com/siaorg/sia-rabbitmq-plus)
 
-
-## 联系我们
-
-* 邮件交流：sia.list@creditease.cn
-
-* 提交issue:
-
-* 微信交流：
-
-    <img src="https://github.com/lijun006788/sia-task/blob/master/docs/images/siaopenWechatIMG3.jpeg" width="30%" height="30%">
+    
+（待补充）
